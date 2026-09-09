@@ -65,7 +65,15 @@ const winConditions = {
     }
 };
 function compareChoices() {
-    resultElement.innerText = translate(winConditions[player][pc]);
+    result = winConditions[player][pc];
+    resultElement.innerText = translate(result);
+
+    // Cor
+    if (result == "win") {
+        resultElement.style.color = "lime";
+    } else if (result == "lose") {
+        resultElement.style.color = "red";
+    }
 
     resultElement.removeAttribute("hidden");
     resetButton.parentElement.removeAttribute("hidden");
