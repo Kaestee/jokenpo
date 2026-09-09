@@ -31,6 +31,10 @@ function playerChoice(event) {
     paperButton.removeEventListener("click", playerChoice);
     scissorsButton.removeEventListener("click", playerChoice);
 
+    rockButton.className += " disabled";
+    paperButton.className += " disabled";
+    scissorsButton.className += " disabled";
+
     pcChoice();
 };
 
