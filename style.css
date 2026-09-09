@@ -1,0 +1,36 @@
+body {
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutUp {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.loadAnim {
+    animation: 1s fadeInUp;
+}
+
+.unloadAnim {
+    animation: 1s fadeOutUp;
+    animation-fill-mode: forwards; 
+}
