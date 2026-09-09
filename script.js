@@ -20,7 +20,7 @@ const translationTable = {
 };
 function translate(text) {
     return translationTable[text];
-}
+};
 
 let player;
 function playerChoice(event) {
@@ -32,7 +32,7 @@ function playerChoice(event) {
     scissorsButton.removeEventListener("click", playerChoice);
 
     pcChoice();
-}
+};
 
 rockButton.addEventListener("click", playerChoice);
 paperButton.addEventListener("click", playerChoice);
@@ -45,7 +45,7 @@ function pcChoice() {
     pcChoiceElement.innerHTML = `Computador escolheu: <span class="fw-medium">${translate(pc)}</span>`;
 
     compareChoices();
-}
+};
 
 const winConditions = {
     "rock": {
@@ -63,7 +63,15 @@ const winConditions = {
         "paper": "win",
         "scissors": "tie"
     }
-}
+};
 function compareChoices() {
     resultElement.innerText = translate(winConditions[player][pc]);
-}
+
+    resultElement.removeAttribute("hidden");
+    resetButton.parentElement.removeAttribute("hidden");
+};
+
+// Reiniciar
+resetButton.addEventListener("click", () => {
+    window.location.reload();
+});
